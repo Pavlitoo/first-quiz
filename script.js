@@ -49,13 +49,11 @@ const questions = [
     },
 
     {
-        question: "Что будет на экране?\n 'let y = 1; 'let x = y = 2; ''alert(x);'",
+        question: "Что такое замыкание в JavaScript?",
         answers: [
-            {text: "1", correct: false},
-            {text: "2", correct: true},
-            {text: "x", correct: false},
-            {text: "y = 2", correct: false},
-            {text: "в коде явно какая-то ошибка", correct: false}
+            {text: "способность функции вызывать саму себя", correct: false},
+            {text: "способность функции запоминать все переменные", correct: false},
+            {text: "способность функции запоминать область видимости, в которой эта функция была объявлена", correct: true}
         ]
     },
     {
@@ -120,7 +118,7 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = "Next";
+    nextButton.innerHTML = "Далее";
     showQuestion();
 }
 
@@ -172,7 +170,7 @@ function selectAnswer(e) {
 function showScore(){
     resetState();
     questionElement.innerHTML = `Правильно ${score} с ${questions.length}!`;
-    nextButton.innerHTML = "Играть снова";
+    nextButton.innerHTML = "Пройти снова";
     nextButton.style.display = "block";
 }
 
